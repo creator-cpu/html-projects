@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+
+}
+html{
+    scroll-behavior: smooth;
+
+}
+a{
+    text-decoration: none;
+
+}
+p{
+    color: #ccc;
+
+}
+img{
+    object-fit: cover;
+
+}
+body{
+    background: #09090c;
+}
+nav, footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    gap: 2px;
+}
+nav .logo i{
+    background: #a3e635;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 50%;
+
+}
+nav .nav-links, footer .copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    background: #171717;
+    gap: 10px;
+    border-radius: 50px;
+}
+nav .nav-links a{
+    color: #fff;
+    transition: all 0.3s ease;
+
+}
+nav .nav-links a:hover{
+    color: #e6353e;
+}
+nav .nav-links .separator, footer .copyright .separator{
+    width: 5px;
+    height: 5px;
+    background: #bc2c2c;
+    border-radius: 50%;
+
+}
+nav .nav-links p, footer .copyright p{
+    font-size: 13px;
+
+}
+/* Modal oynani yashirish */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal ichidagi kontent */
+.modal-content {
+    background-color: #171717;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #fff;
+}
+
+.modal-content label {
+    display: block;
+    color: #ccc;
+    margin: 10px 0 5px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background: #222;
+    color: #fff;
+}
+
+/* Login tugmasi */
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    background: #e6353e;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background: #c52a2a;
+}
+
+/* Yopish tugmasi */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+nav .login{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #171717;
+    padding: 4px 4px 4px 14px;
+    border-radius: 50px;
+
+}
+nav .login img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+nav .login a{
+    font-size: 13px;
+    color: #fff;
+}
+.prompt-sec{
+    padding: 20px;
+}
+.prompt-sec h1{
+    color: #ccc;
+    font-size: 182px;
+    line-height: 120px;
+    text-align: center;
+    margin-top: 36px;
+    
+}
+.prompt-sec .prompt-img{
+    position: relative;
+
+}
+.prompt-sec .prompt-img img{
+    width: 100%;
+    height: 440px;
+    border-radius: 60px;
+    object-position: top center;
+    box-shadow: 0 -20px 40px rgba(0 , 0, 0, 1);
+}
+.prompt-sec .prompt-img input{
+    width: 55%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 20px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255 , 255 , 0.4);
+    font-size: 16px;
+    padding: 16px;
+    text-align: center;
+    color: #fff;
+}
+.prompt-sec .prompt-img input::placeholder{
+    color: #ccc;
+}
+.prompt-sec .prompt-img .tabs{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow:  0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50px;
+}
+.prompt-sec .prompt-img .tabs a{
+    color: #fff;
+    background: #231f1c;
+    padding: 10px;
+    width: 160px;
+    text-align: center;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+
+}
+.prompt-sec .prompt-img .tabs .a.active,
+.prompt-sec .prompt-img .tabs  a:hover{
+    color: #231f1c;
+    background: #e63d3d;
+
+}
+.showcase{
+    padding: 40px 80px;
+    margin-top: 20px;
+
+}
+.showcase h3{
+    color: #fff;
+    font-size: 56px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+.showcase .text-sec{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+.showcase .text-sec p{
+    width: 50%;
+    text-align: justify;
+
+}
+.showcase .text-sec .images, 
+.showcase .image-sec{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.showcase .text-sec .images img, 
+.showcase .image-sec img{
+    width: 256px;
+    border-radius: 40px;
+    border: 2px solid #c5c5c5;
+}
+.services .header, .video-sec .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 80px 0 ;
+
+}
+.services .header h3, .video-sec .header h3{
+    color: #fff;
+    font-size: 56px;
+    text-transform: uppercase;
+    width: 60%;
+
+}
+.services .service-items{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 80px;
+    padding-bottom: 40px;
+}
+.services .service-items .item{
+    background: #171717;
+    padding: 20px;
+    border-radius: 40px;
+    width: 25%;
+
+}
+.services .service-items .item .title{
+    display: flex;
+    align-items: center;
+    background: #2e2c29;
+    padding: 5px 20px 5px 5px;
+    gap: 10px;
+    width: fit-content;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+.services .service-items .item .title .gradient{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+
+}
+.services .service-items .item:nth-child(1) .title .gradient{
+    background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100% );
+
+}
+.services .service-items .item:nth-child(2) .title .gradient{
+    background-image: linear-gradient(to top, #b304b3 0%, #3007c5 13%,  #f80707 87%, #5aac5a 100% );
+}
+.services .service-items .item:nth-child(3) .title .gradient{
+    background-image: linear-gradient(to right, #dc0d10 0%, #1432dc 100% );
+}
+.services .service-items .item:nth-child(4) .title .gradient{
+    background-image: linear-gradient(to top, #17d46c 0%, #19c6e1 100%);
+}
+.services .service-items .item .desc h5{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+.services .service-items .item.active{
+    background: #e63535;
+
+}
+.services .service-items .item.title{
+    background: #000;
+}
+.services .service-items .item.active .desc h5{
+    color: 000;
+
+}
+.services .service-items .item.active .desc p{
+    color: #313131;
+
+}
+.video-sec .header h3{
+    text-align: right;
+
+}
+.video-sec .video{
+    margin: 20px 0 40px;
+    padding: 0 80px;
+    position: relative;
+
+}
+.video-sec .video img{
+    width: 100%;
+    height: 420px;
+    object-fit: top center;
+    border-radius: 40px;
+}
+.video-sec .video button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    display: flex;
+    background: rgba(86, 85, 86, 0.42);
+    backdrop-filter: blur(8.7px);
+    -webkit-backdrop-filter: blur(8.7px);
+    border: 1px solid rgba(86, 85, 85, 0.3);
+    border-radius: 50%;
+    color: #9d2b2b;
+    padding: 16px 16px 16px 24px;
+    cursor: pointer;
+    
+}
+footer .copyright{
+    width: 100%;
+}
+@media screen and (max-width: 1400px) {
+    .prompt-sec h1{
+        font-size: 136px;
+        line-height: 90px;
+    }
+    .prompt-sec .prompt-img .tabs a{
+        width: 120px;
+    }
+    .showcase h3{
+        font-size: 40px;
+        margin-bottom: 14px;
+    }
+    .showcase .text-sec{
+        flex-direction: column;
+    }
+    .showcase .text-sec p{
+        width: 100%;
+    }
+    .showcase .text-sec .images, .showcase .image-sec{
+        margin-left: auto;
+    }
+    .showcase .text-sec .images img, .showcase .image-sec img{
+        width: 228px;
+    }
+    .services .header h3, .video-sec .header h3{
+        font-size: 40px;
+        width: 75%;
+    }
+    .services .service-items{
+        flex-wrap: wrap;
+    }
+    .services .service-items .item{
+        width: 48%;
+    }   
+}
+
+@media  screen and (max-width:992px) {
+    .prompt-sec h1{
+        font-size: 100px;
+        line-height: 70px;
+    }
+    .prompt-sec .prompt-img input{
+        top: 70%;
+        padding: 12px;
+    }
+    .prompt-sec .prompt-img .tabs a{
+        font-size: 14px;
+        width: 100px;
+    }
+    .showcase, .services .service-items{
+        padding: 40px;
+    }
+    .showcase h3{
+        font-size: 34px;
+    }
+    .showcase .text-sec .images, .showcase .image-sec{
+        justify-content: center;
+    }
+    .showcase .text-sec .images img, .showcase .image-sec img{
+        width: 30%;
+    }
+    .services .header{
+        flex-direction: column;
+        padding: 40px 40px 0;
+    }
+    .services .header h3, .video-sec .header h3{
+        width: 100%;
+    }
+    .video-sec .header{
+        flex-direction: column-reverse;
+        padding: 40px 40px 0;
+    }
+    .video-sec .video{
+        padding: 0 40px;
+    }  
+}
+@media screen and (max-width: 768px) {
+     nav .logo i{
+     padding: 6px;
+
+    }
+    nav .nav-links a{
+    font-size: 13px;
+
+     }
+    nav .nav-links p, footer .copyright p{
+    font-size: 12px;
+     }
+     nav .login img{
+     width: 28px;
+     height: 28px;
+
+    }
+    .prompt-sec h1{
+        font-size: 62px;
+        line-height: 48px;
+        margin-top: 20px;
+    }
+    .prompt-sec .prompt-img input{
+        width: 80%;
+
+    }
+    .prompt-sec .prompt-img .tabs{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        width: 92%;
+        bottom: -60px;
+        padding: 20px 0;
+
+    }
+    .prompt-sec .prompt-img .tabs a{
+        width: 29%;
+
+    }
+    .services .service-items .item{
+        width: 100%;
+    }
+    .video-sec .video button{
+        font-size: 80px;
+
+    }
+}
+
+
+
+
+
+
